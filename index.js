@@ -14,11 +14,21 @@ seats.innerText = selectedSeats
 const addP = document.getElementById('add-p')
 const addClass = document.getElementById('add-class')
 const addPrice = document.getElementById('add-price')
+const couponSection = document.getElementById('coupon-section')
 const perTicket = 550
+let ticketNumbers = 0
+let totalPrice = 0
+let discount = 0
+let grandTotal = 0
+const total = document.getElementById('total')
+
+
 
 
 for (const button of buttons) {
     button.addEventListener('click', function () {
+        button.setAttribute('disabled',true)
+      
         if (check >= 4) {
             alert('you cant select more than 4 seats')
 
@@ -43,16 +53,62 @@ for (const button of buttons) {
         const p3 = document.createElement('p')
         p1.innerText = button.innerText
         p2.innerText = 'Economy'
-        p3.innerText = perTicket
+        p3.innerText = '550'
         addP.appendChild(p1)
         addClass.appendChild(p2)
         addPrice.appendChild(p3)
+        ticketNumbers++
+        totalPrice = perTicket*ticketNumbers
+        total.innerText = totalPrice
        
+    
         
 
 
     })
 }
+
+// discount related
+
+const couponInput = document.getElementById('coupon-input')
+const couponButton = document.getElementById('apply-button')
+
+couponButton.addEventListener('click',function(){
+    let input = couponInput.value.toUpperCase()
+    if(check === 4){
+        couponButton.removeAttribute('disabled')
+        if(input === "NEW15"){
+            discount = totalPrice * 15 / 100
+            grandTotal = totalPrice - discount
+            couponInput.classList.add('hidden')
+            couponButton.classList.add('hidden')
+            couponSection.innerText = 'Congratulations You got an 15% discount'
+        }
+        
+        else {if(input === "COUPLE20"){
+            discount = totalPrice * 20 / 100
+            grandTotal = totalPrice - discount
+            couponInput.classList.add('hidden')
+            couponButton.classList.add('hidden')
+            couponSection.innerText = 'Congratulations You got an 20% discount'
+        }
+     
+        else{
+            alert('invalid coupon')
+        }
+        }
+        
+          
+      
+    }
+    else{
+        couponButton.removeAttribute('disabled',true)
+        alert('You have to buy 4 tickets to use this Coupon')
+    }
+})
+
+
+
 
 
 
