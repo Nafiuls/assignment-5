@@ -94,7 +94,8 @@ couponButton.addEventListener('click',function(){
             couponInput.classList.add('hidden')
             couponButton.classList.add('hidden')
             couponSection.innerText = 'Congratulations You got an 20% discount'
-            discountedTotal.innerText = grandTotal
+            discountedTotal.innerText
+             = grandTotal
         }
      
         else{
