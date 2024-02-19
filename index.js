@@ -21,6 +21,8 @@ let totalPrice = 0
 let discount = 0
 let grandTotal = 0
 const total = document.getElementById('total')
+let discountedTotal = document.getElementById('grand-total')
+
 
 
 
@@ -68,7 +70,7 @@ for (const button of buttons) {
     })
 }
 
-// discount related
+// discount related and coupon related
 
 const couponInput = document.getElementById('coupon-input')
 const couponButton = document.getElementById('apply-button')
@@ -83,6 +85,7 @@ couponButton.addEventListener('click',function(){
             couponInput.classList.add('hidden')
             couponButton.classList.add('hidden')
             couponSection.innerText = 'Congratulations You got an 15% discount'
+            discountedTotal.innerText = grandTotal
         }
         
         else {if(input === "COUPLE20"){
@@ -91,6 +94,7 @@ couponButton.addEventListener('click',function(){
             couponInput.classList.add('hidden')
             couponButton.classList.add('hidden')
             couponSection.innerText = 'Congratulations You got an 20% discount'
+            discountedTotal.innerText = grandTotal
         }
      
         else{
