@@ -136,7 +136,7 @@
                     features allow for a streamlined .</p>
             </div>
             <!-- form container -->
-            <div class="max-w-7xl mx-auto min-h-screen">
+            <div class="max-w-7xl mx-auto min-h-screen ">
                 <!-- ticket container -->
                 <div class="h-[418px] bg-white w-full rounded-3xl px-8 py-11 mt-12 flex justify-between items-center">
 
@@ -201,7 +201,7 @@
                 <!--  -->
                 <!--  -->
                 <!--  -->
-                <div class="flex">
+                <div class="flex gap-5">
                     <div class="w-[60%]">
                    
                         <!-- bus seats selection container  -->
@@ -343,7 +343,52 @@
                     <!--  -->
                     <!--  -->
                     <!-- seat apply form -->
-                    <div class="h-[400px] w-[40%] bg-red-100"></div>
+                    <div class="w-[40%] p-8  mt-7 bg-white rounded-3xl">
+                        <!-- text container -->
+                        <div class="border-b-2 border-dotted pb-6">
+                            <h1 class="text-2xl font-semibold ">Select Your seat</h1>
+                        </div>
+                        <!-- grand total container -->
+                        <div class="h-[335px] w-full bg-[#F7F8F8] mt-6 rounded-xl p-8">
+
+                            <div class="flex justify-between border-b-2 border-dotted pb-4">
+                                <p class="font-medium">Seat <span id="selected-seats" class="px-2 py-1 rounded bg-[#1DD100] text-white hidden"></span></p>
+                                <p class="font-medium">Class</p>
+                                <p class="font-medium">Price</p>
+                            </div>
+                            <!--  -->
+                            <!--  -->
+                            <div id="add-element" class="flex justify-between border-b-2 pb-4">
+
+                                <div id="add-p"></div>
+                                <div id="add-class"></div>
+                                <div id="add-price"></div>
+
+                            </div>
+                            <!-- total price -->
+                            <div class="flex justify-between font-medium">
+                                <p>Total Price</p>
+                                <p>BDT <Span id="total"></Span></p>
+                            </div>
+                            <!-- coupon input -->
+                            <div class=" mt-4 relative">
+                                <input type="text" placeholder="Have any coupon?" class="w-full h-[56px] rounded-xl px-6">
+                                <button class="bg-[#1DD100] text-white py-3 px-6 rounded-lg absolute right-1 top-1">
+                                    APPLY
+                                </button>
+                            </div>
+                            <!-- grand total -->
+                            <div class="flex justify-between  font-medium mt-6" >
+                                <p>Grand Total</p>
+                                <p>BDT <span id="grand-total"></span></p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
                 </div>
                
               
@@ -368,6 +413,7 @@
     <!-- js script file connect -->
     <script src="scroll.js"></script>
     <script src="index.js"></script>
+    <script src="selected-seats.js"></script>
 </body>
 
 </html>
