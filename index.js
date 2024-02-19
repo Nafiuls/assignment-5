@@ -88,7 +88,7 @@ couponButton.addEventListener('click',function(){
             discountedTotal.innerText = grandTotal
         }
         
-        else {if(input === "COUPLE20"){
+        else {if(input === "COUPLE 20"){
             discount = totalPrice * 20 / 100
             grandTotal = totalPrice - discount
             couponInput.classList.add('hidden')
